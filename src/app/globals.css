@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #FF800F;
+  --secondary: #001064;
+  --light: #F6F7F8;
+  --dark: #010A35;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-light: var(--light);
+  --color-dark: var(--dark);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-primary hover:bg-secondary text-white font-medium py-3 px-5 rounded transition-colors duration-300;
+}
+
+.btn-secondary {
+  @apply bg-secondary hover:bg-primary text-white font-medium py-3 px-5 rounded transition-colors duration-300;
+}
+
+/* Custom form styles */
+.form-control {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.5s ease-out;
+}
+
+.animate-zoom-in {
+  animation: zoomIn 0.5s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 1.5s infinite;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Custom button hover effects */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 128, 15, 0.3);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 16, 100, 0.3);
+}
+
+/* Enhanced form controls */
+.form-control:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(255, 128, 15, 0.1);
+}
+
+/* Image hover effects */
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Text reveal animation */
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal span {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: textReveal 0.8s ease forwards;
+}
+
+@keyframes textReveal {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Parallax effect */
+.parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Custom cursor effects */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+/* Enhanced loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Smooth page transitions */
+.page-transition {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Enhanced focus states for accessibility */
+.focus-visible:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Magnetic hover effect */
+.magnetic {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.magnetic:hover {
+  transform: scale(1.05);
+}
