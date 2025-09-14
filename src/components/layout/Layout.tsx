@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import BackToTop from '../ui/BackToTop';
 import Spinner from '../ui/Spinner';
 import FloatingActionButton from '../ui/FloatingActionButton';
 

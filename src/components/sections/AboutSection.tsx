@@ -90,7 +90,7 @@ const AboutSection = () => {
             </div>
 
             <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed">
-              Home Electra International is Bangladesh's premier cooling and heating service provider, offering comprehensive HVAC solutions for both residential and commercial clients. Our experienced technicians specialize in AC installation, repair, maintenance, and emergency services to ensure your comfort throughout the year.
+              Home Electra International is Bangladesh&apos;s premier cooling and heating service provider, offering comprehensive HVAC solutions for both residential and commercial clients. Our experienced technicians specialize in AC installation, repair, maintenance, and emergency services to ensure your comfort throughout the year.
             </p>
 
             <div className="border-t border-gray-200 pt-6 sm:pt-8">
@@ -99,13 +99,13 @@ const AboutSection = () => {
                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-primary rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
-                  <h4 className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-dark">+8801324-718981</h4>
+                  <a href="tel:+8801324718981" className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-dark hover:text-primary transition-colors">+8801324-718981</a>
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-primary rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
-                  <h4 className="text-xs sm:text-sm lg:text-base xl:text-lg font-semibold text-dark break-all">homeelectrainternational@gmail.com</h4>
+                  <a href="mailto:homeelectrainternational@gmail.com" className="text-xs sm:text-sm lg:text-base xl:text-lg font-semibold text-dark break-all hover:text-primary transition-colors">homeelectrainternational@gmail.com</a>
                 </div>
               </div>
             </div>

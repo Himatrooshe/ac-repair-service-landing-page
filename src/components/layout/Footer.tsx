@@ -71,11 +71,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="w-4 h-4 lg:w-5 lg:h-5 mr-3 text-primary flex-shrink-0" />
-                <span className="text-gray-400 text-sm lg:text-base">+8801324-718981</span>
+                <a href="tel:+8801324718981" className="text-gray-400 text-sm lg:text-base hover:text-primary transition-colors">+8801324-718981</a>
               </div>
               <div className="flex items-start">
                 <Mail className="w-4 h-4 lg:w-5 lg:h-5 mr-3 text-primary mt-1 flex-shrink-0" />
-                <span className="text-gray-400 text-sm lg:text-base break-all">homeelectrainternational@gmail.com</span>
+                <a href="mailto:homeelectrainternational@gmail.com" className="text-gray-400 text-sm lg:text-base break-all hover:text-primary transition-colors">homeelectrainternational@gmail.com</a>
               </div>
               <div className="flex items-start">
                 <svg className="w-4 h-4 lg:w-5 lg:h-5 mr-3 text-primary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">

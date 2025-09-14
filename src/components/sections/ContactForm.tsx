@@ -68,11 +68,6 @@ const ContactForm = () => {
   return (
     <div className="bg-white p-4 xs:p-5 sm:p-6 md:p-8 rounded-lg shadow-lg">
       <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-dark mb-3 xs:mb-4 sm:mb-5 md:mb-6 leading-tight">If You Have Any Query, Please Contact Us</h2>
-      <p className="text-gray-600 mb-4 xs:mb-5 sm:mb-6 md:mb-8 text-sm xs:text-base leading-relaxed">
-        The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. 
-        Just copy and paste the files, add a little code and you're done. 
-        <a href="https://htmlcodex.com/contact-form" className="text-primary hover:underline touch-manipulation">Download Now</a>.
-      </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 xs:space-y-5 sm:space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 xs:gap-5 sm:gap-6">

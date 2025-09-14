@@ -67,7 +67,7 @@ const ServicesGrid = () => {
         </div>
 
         <div ref={servicesRef} className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div
               key={service.id}
               className="group service-card mx-2 xs:mx-0"

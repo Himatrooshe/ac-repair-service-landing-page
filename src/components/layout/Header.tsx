@@ -28,15 +28,14 @@ const Header = () => {
             <div className="flex items-center space-x-4 md:space-x-6 lg:space-x-8">
               <div className="flex items-center">
                 <Phone className="w-3 h-3 md:w-4 md:h-4 mr-2" />
-                <span className="text-xs md:text-sm">+8801324-718981</span>
+                <a href="tel:+8801324718981" className="text-xs md:text-sm hover:text-primary transition-colors">+8801324-718981</a>
               </div>
               <div className="flex items-center">
                 <Mail className="w-3 h-3 md:w-4 md:h-4 mr-2" />
-                <span className="text-xs md:text-sm truncate max-w-[200px] lg:max-w-none">homeelectrainternational@gmail.com</span>
+                <a href="mailto:homeelectrainternational@gmail.com" className="text-xs md:text-sm truncate max-w-[200px] lg:max-w-none hover:text-primary transition-colors">homeelectrainternational@gmail.com</a>
               </div>
             </div>
-            <nav className="hidden lg:flex items-center space-x-4">
-              <Link href="#" className="text-sm hover:text-primary transition-colors">Home</Link>
+            <nav className="hidden lg:flex items-center space-x-4">    
               <Link href="#" className="text-sm hover:text-primary transition-colors">Terms</Link>
               <Link href="#" className="text-sm hover:text-primary transition-colors">Privacy</Link>
               <Link href="#" className="text-sm hover:text-primary transition-colors">Support</Link>

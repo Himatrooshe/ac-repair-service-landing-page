@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Phone, MessageCircle, ArrowUp } from 'lucide-react';
+import { Phone, MessageCircle } from 'lucide-react';
 import { gsap } from 'gsap';
 
 const FloatingActionButton = () => {

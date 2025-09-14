@@ -42,7 +42,7 @@ export interface QuoteForm {
 
 export interface Fact {
   id: number;
-  number: number;
+  number: string | number;
   label: string;
 }
 
