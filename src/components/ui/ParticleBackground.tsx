@@ -1,33 +1,49 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
 const ParticleBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Ensure component only renders on client
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !isMounted) return;
 
     const container = containerRef.current;
     const particles: HTMLDivElement[] = [];
 
-    // Create particles
+    // Create particles with fixed seed for consistency
     for (let i = 0; i < 50; i++) {
       const particle = document.createElement('div');
       particle.className = 'absolute w-1 h-1 bg-white rounded-full opacity-20';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.top = Math.random() * 100 + '%';
+      
+      // Use index-based positioning for consistency
+      const leftPercent = (i * 7.3) % 100; // Pseudo-random but consistent
+      const topPercent = (i * 13.7) % 100; // Pseudo-random but consistent
+      
+      particle.style.left = leftPercent + '%';
+      particle.style.top = topPercent + '%';
       container.appendChild(particle);
       particles.push(particle);
     }
 
-    // Animate particles
+    // Animate particles with deterministic values
     particles.forEach((particle, index) => {
+      const xOffset = ((index * 17) % 100) - 50; // Deterministic "random"
+      const yOffset = ((index * 23) % 100) - 50; // Deterministic "random"
+      const duration = (index % 5) + 8; // Deterministic duration
+      const opacity = ((index * 0.03) % 0.4) + 0.1; // Deterministic opacity
+      
       gsap.to(particle, {
-        y: Math.random() * 100 - 50,
-        x: Math.random() * 100 - 50,
-        duration: Math.random() * 10 + 10,
+        y: yOffset,
+        x: xOffset,
+        duration: duration,
         repeat: -1,
         yoyo: true,
         ease: 'none',
@@ -35,8 +51,8 @@ const ParticleBackground = () => {
       });
 
       gsap.to(particle, {
-        opacity: Math.random() * 0.5 + 0.1,
-        duration: Math.random() * 3 + 2,
+        opacity: opacity,
+        duration: (index % 3) + 2,
         repeat: -1,
         yoyo: true,
         ease: 'power2.inOut',
@@ -52,7 +68,17 @@ const ParticleBackground = () => {
         }
       });
     };
-  }, []);
+  }, [isMounted]);
+
+  // Don't render anything on server
+  if (!isMounted) {
+    return (
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ zIndex: 1 }}
+      />
+    );
+  }
 
   return (
     <div

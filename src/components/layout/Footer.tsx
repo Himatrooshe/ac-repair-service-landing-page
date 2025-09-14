@@ -113,7 +113,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © <Link href="#" className="text-primary hover:text-white transition-colors">Your Site Name</Link>, All Right Reserved.
+              © 2025 All Rights Reserved by Home Electra International | Developed by <Link href="https://portfolio-gold-two-m3rawkfkqv.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white transition-colors">Md Mozahidul Islam</Link> and Md. Farhan Kabir | Designed by <Link href="https://portfolio-gold-two-m3rawkfkqv.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white transition-colors">Md Mozahidul Islam</Link>
             </div>
             <div className="flex items-center space-x-4">
               <Link href="https://www.facebook.com/HomeElectraInternational" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 backdrop-blur-xl text-gray-300 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 hover:border hover:border-white/30" style={{backdropFilter: 'blur(15px) saturate(150%)'}}>
