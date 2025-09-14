@@ -4,7 +4,6 @@ import FactsCounter from '@/components/sections/FactsCounter';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import ServicesGrid from '@/components/sections/ServicesGrid';
 import QuoteForm from '@/components/sections/QuoteForm';
-import TeamGrid from '@/components/sections/TeamGrid';
 import TestimonialsCarousel from '@/components/sections/TestimonialsCarousel';
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <FeaturesSection />
       <ServicesGrid />
       <QuoteForm />
-      <TeamGrid />
       <TestimonialsCarousel />
     </>
   );

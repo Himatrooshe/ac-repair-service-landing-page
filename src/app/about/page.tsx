@@ -12,6 +12,7 @@ export default function AboutPage() {
           { label: 'Pages' },
           { label: 'About' }
         ]}
+        backgroundImage="/img/p2.png"
       />
       <AboutSection />
       <FactsCounter />

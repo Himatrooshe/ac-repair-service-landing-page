@@ -98,8 +98,8 @@ const QuoteForm = () => {
                   For Individuals And Organisations
                 </h3>
                 <p className="text-lg mb-8 leading-relaxed">
-                  Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. 
-                  Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                  Get professional AC repair services tailored for both individual customers and business organizations. 
+                  We provide comprehensive solutions with transparent pricing and guaranteed satisfaction.
                 </p>
                 <button className="btn-primary">
                   More Details

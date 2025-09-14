@@ -11,11 +11,10 @@ const FeaturesSection = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-8">
-              Few Reasons Why People Choosing Us!
+              Why Customers Trust Our Services!
             </h2>
             <p className="text-gray-600 mb-12 text-lg leading-relaxed">
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. 
-              Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+              Discover what sets us apart in the HVAC industry. Our commitment to excellence, skilled technicians, and customer-first approach make us the preferred choice for heating and cooling solutions across Bangladesh.
             </p>
 
             <div className="space-y-8">

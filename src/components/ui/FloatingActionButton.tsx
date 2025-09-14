@@ -46,32 +46,42 @@ const FloatingActionButton = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50">
       {/* Floating Options */}
-      <div className="absolute bottom-16 right-0 space-y-3">
+      <div className="absolute bottom-12 sm:bottom-14 lg:bottom-16 right-0 space-y-2 sm:space-y-3">
         <div
-          className="fab-option bg-primary text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-secondary transition-colors"
-          onClick={() => window.open('tel:+0123456789')}
+          className="fab-option bg-primary text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg cursor-pointer hover:bg-secondary transition-colors"
+          onClick={() => window.open('tel:+8801324718981')}
           style={{ scale: 0, opacity: 0 }}
         >
-          <Phone className="w-5 h-5" />
+          <Phone className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
         </div>
         <div
-          className="fab-option bg-primary text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-secondary transition-colors"
-          onClick={() => window.open('mailto:info@example.com')}
+          className="fab-option bg-primary text-white p-2 sm:p-3 lg:p-4 rounded-full shadow-lg cursor-pointer hover:bg-secondary transition-colors"
+          onClick={() => window.open('https://wa.me/8801324718981')}
           style={{ scale: 0, opacity: 0 }}
         >
-          <MessageCircle className="w-5 h-5" />
+          <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
         </div>
       </div>
 
       {/* Main FAB */}
       {isVisible && (
         <div
-          className="bg-primary text-white p-4 rounded-full shadow-lg cursor-pointer hover:bg-secondary transition-all duration-300 hover:scale-110"
+          className="bg-primary text-white p-3 sm:p-4 lg:p-5 rounded-full shadow-lg cursor-pointer hover:bg-secondary transition-all duration-300 hover:scale-110 flex items-center justify-center"
           onClick={isVisible ? scrollToTop : () => setIsExpanded(!isExpanded)}
         >
-          <ArrowUp className="w-6 h-6" />
+          <svg 
+            className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24" 
+            strokeWidth="2.5"
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            <path d="M7 14l5-5 5 5" />
+          </svg>
         </div>
       )}
     </div>

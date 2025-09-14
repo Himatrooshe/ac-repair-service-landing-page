@@ -3,38 +3,38 @@ import { Service } from '@/types';
 export const services: Service[] = [
   {
     id: 1,
-    title: 'AC Installation',
-    image: '/img/service-1.jpg',
+    title: ' এসি হাইড্রোওয়াস',
+    image: '/img/s1.png',
     icon: '/img/icon/icon-01-light.png'
   },
   {
     id: 2,
-    title: 'Cooling Services',
-    image: '/img/service-2.jpg',
+    title: 'এসি মাস্টার ক্লিনিং',
+    image: '/img/s2.png',
     icon: '/img/icon/icon-02-light.png'
   },
   {
     id: 3,
-    title: 'Heating Services',
-    image: '/img/service-3.jpg',
+    title: 'এসি লিক মেরামত এবং গ্যাস চার্জ',
+    image: '/img/p3.png',
     icon: '/img/icon/icon-03-light.png'
   },
   {
     id: 4,
-    title: 'Maintenance & Repair',
-    image: '/img/service-4.jpg',
+    title: 'এসি ফিটিং এবং শিফটিং',
+    image: '/img/s3.png',
     icon: '/img/icon/icon-04-light.png'
   },
   {
     id: 5,
-    title: 'Indoor Air Quality',
-    image: '/img/service-5.jpg',
+    title: 'এসি থেকে পানি পড়া সমস্যার সমাধান',
+    image: '/img/s4.png',
     icon: '/img/icon/icon-05-light.png'
   },
   {
     id: 6,
-    title: 'Annual Inspections',
-    image: '/img/service-6.jpg',
+    title: 'এসি সার্কিট মেরামত',
+    image: '/img/p2.png',
     icon: '/img/icon/icon-06-light.png'
   }
 ];
