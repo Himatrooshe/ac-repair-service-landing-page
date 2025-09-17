@@ -57,12 +57,12 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24">
+    <section ref={sectionRef} className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-pattern">
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Content */}
           <div ref={contentRef} className="order-2 lg:order-1">
-            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-dark mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 leading-tight px-2 lg:px-0">
+            <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-shimmer mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 leading-tight px-2 lg:px-0">
               Best Cooling & Heating Service Center in Bangladesh
             </h2>
             
@@ -96,13 +96,13 @@ const AboutSection = () => {
             <div className="border-t border-gray-200 pt-6 sm:pt-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-primary rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 hover-glow floaty">
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
                   <a href="tel:+8801324718981" className="text-sm sm:text-base lg:text-lg xl:text-xl font-semibold text-dark hover:text-primary transition-colors">+8801324-718981</a>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-primary rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 hover-glow floaty">
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
                   <a href="mailto:homeelectrainternational@gmail.com" className="text-xs sm:text-sm lg:text-base xl:text-lg font-semibold text-dark break-all hover:text-primary transition-colors">homeelectrainternational@gmail.com</a>

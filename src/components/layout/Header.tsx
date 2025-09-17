@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, Phone, Mail, Facebook, Youtube, Instagram } from 'lucide-react';
@@ -15,23 +15,55 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const bar = document.getElementById('scroll-progress');
+    let ticking = false;
+
+    const updateProgress = () => {
+      if (!bar) return;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+      bar.style.width = progress + '%';
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    };
+
+    // Initial call
+    updateProgress();
+    
+    // Use passive listener for better performance
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <>
+      <div id="scroll-progress" className="progress-bar" />
       {/* Topbar */}
-      <div className="text-gray-300 py-2 px-0 hidden md:block relative overflow-hidden" style={{backgroundImage: 'url(/img/besthero.png)', backgroundSize: 'cover', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat'}}>
+      <div className="text-gray-300 py-2 px-0 hidden md:block relative overflow-hidden aurora" style={{backgroundImage: 'url(/img/besthero.png)', backgroundSize: 'cover', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat'}}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4 md:space-x-6 lg:space-x-8">
               <div className="flex items-center">
-                <Phone className="w-3 h-3 md:w-4 md:h-4 mr-2" />
+                <Phone className="w-3 h-3 md:w-4 md:h-4 mr-2 floaty" />
                 <a href="tel:+8801324718981" className="text-xs md:text-sm hover:text-primary transition-colors">+8801324-718981</a>
               </div>
               <div className="flex items-center">
-                <Mail className="w-3 h-3 md:w-4 md:h-4 mr-2" />
+                <Mail className="w-3 h-3 md:w-4 md:h-4 mr-2 floaty" />
                 <a href="mailto:homeelectrainternational@gmail.com" className="text-xs md:text-sm truncate max-w-[200px] lg:max-w-none hover:text-primary transition-colors">homeelectrainternational@gmail.com</a>
               </div>
             </div>
@@ -49,7 +81,7 @@ const Header = () => {
         <div className="container mx-auto px-3 sm:px-4 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center flex-shrink-0">
+            <Link href="/" className="flex items-center flex-shrink-0 tilt">
               <Image
                 src="/img/main logo.png"
                 alt="Home Electra International Logo"
@@ -62,19 +94,19 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
-              <Link href="/" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[80px] justify-center">
+              <Link href="/" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[80px] justify-center btn-shine">
                 <span className="absolute inset-0 flex items-center justify-center transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Home</span>
                 <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Home</span>
               </Link>
-              <Link href="/about" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[100px] justify-center">
+              <Link href="/about" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[100px] justify-center btn-shine">
                 <span className="absolute inset-0 flex items-center justify-center transition-transform duration-150 ease-in-out group-hover:-translate-y-full">About Us</span>
                 <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">About Us</span>
               </Link>
-              <Link href="/services" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[130px] justify-center whitespace-nowrap">
+              <Link href="/services" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[130px] justify-center whitespace-nowrap btn-shine">
                 <span className="absolute inset-0 flex items-center justify-center transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Our Services</span>
                 <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Our Services</span>
               </Link>
-              <Link href="/contact" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[120px] justify-center whitespace-nowrap">
+              <Link href="/contact" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[120px] justify-center whitespace-nowrap btn-shine">
                 <span className="absolute inset-0 flex items-center justify-center transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Contact Us</span>
                 <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Contact Us</span>
               </Link>
@@ -82,16 +114,16 @@ const Header = () => {
 
             {/* Social Icons */}
             <div className="hidden md:flex lg:flex items-center space-x-1 sm:space-x-2">
-              <Link href="https://www.facebook.com/HomeElectraInternational" target="_blank" rel="noopener noreferrer" className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              <Link href="https://www.facebook.com/HomeElectraInternational" target="_blank" rel="noopener noreferrer" className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors glow-ring">
                 <Facebook className="w-3 h-3 sm:w-4 sm:h-4" />
               </Link>
-              <Link href="https://www.youtube.com/@homeelectra" target="_blank" rel="noopener noreferrer" className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              <Link href="https://www.youtube.com/@homeelectra" target="_blank" rel="noopener noreferrer" className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors glow-ring">
                 <Youtube className="w-3 h-3 sm:w-4 sm:h-4" />
               </Link>
-              <Link href="https://instagram.com/homeelectrainternational" target="_blank" rel="noopener noreferrer" className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              <Link href="https://instagram.com/homeelectrainternational" target="_blank" rel="noopener noreferrer" className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors glow-ring">
                 <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
               </Link>
-              <Link href="https://wa.me/8801324718981" target="_blank" rel="noopener noreferrer" className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              <Link href="https://wa.me/8801324718981" target="_blank" rel="noopener noreferrer" className="w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors glow-ring">
                 <WhatsAppIcon className="w-3 h-3 sm:w-4 sm:h-4" />
               </Link>
             </div>
@@ -109,35 +141,35 @@ const Header = () => {
           {isMenuOpen && (
             <div className="md:hidden bg-white/10 backdrop-blur-xl border-t border-white/20" style={{backdropFilter: 'blur(20px) saturate(180%)'}}>
               <div className="px-3 pt-3 pb-4 space-y-2">
-                <Link href="/" className="block px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base">
+                <Link href="/" className="px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base btn-shine">
                   <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Home</span>
                   <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Home</span>
                 </Link>
-                <Link href="/about" className="block px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base">
+                <Link href="/about" className=" px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base btn-shine">
                   <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-150 ease-in-out group-hover:-translate-y-full">About Us</span>
                   <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">About Us</span>
                 </Link>
-                <Link href="/services" className="block px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base">
+                <Link href="/services" className="px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base btn-shine">
                   <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Our Services</span>
                   <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Our Services</span>
                 </Link>
-                <Link href="/contact" className="block px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base">
+                <Link href="/contact" className="px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base btn-shine">
                   <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Contact Us</span>
                   <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Contact Us</span>
                 </Link>
                 
                 {/* Mobile Social Icons */}
                 <div className="flex items-center justify-center space-x-3 pt-4 border-t border-white/20 mt-4">
-                  <Link href="https://www.facebook.com/HomeElectraInternational" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                  <Link href="https://www.facebook.com/HomeElectraInternational" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors glow-ring">
                     <Facebook className="w-4 h-4" />
                   </Link>
-                  <Link href="https://www.youtube.com/@homeelectra" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                  <Link href="https://www.youtube.com/@homeelectra" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors glow-ring">
                     <Youtube className="w-4 h-4" />
                   </Link>
-                  <Link href="https://instagram.com/homeelectrainternational" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                  <Link href="https://instagram.com/homeelectrainternational" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors glow-ring">
                     <Instagram className="w-4 h-4" />
                   </Link>
-                  <Link href="https://wa.me/8801324718981" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                  <Link href="https://wa.me/8801324718981" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-light text-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors glow-ring">
                     <WhatsAppIcon className="w-4 h-4" />
                   </Link>
                 </div>

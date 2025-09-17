@@ -16,7 +16,7 @@ export default function AboutPage() {
       />
       <AboutSection />
       <FactsCounter />
-      <TeamGrid />
+      {/* <TeamGrid /> */}
     </>
   );
 }
