@@ -3,23 +3,23 @@ import { Testimonial } from '@/types';
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: 'Michael Thompson',
+    name: 'Rafid Ahmed',
     profession: 'Homeowner',
-    image: '/img/testimonial-1.jpg',
-    text: 'Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.'
+    image: '/img/review1.png',
+    text: 'অসাধারণ সার্ভিস! আমার এসির সমস্যা খুব দ্রুত সমাধান করেছেন। দক্ষ টেকনিশিয়ান এবং সাশ্রয়ী মূল্য। আমি অবশ্যই আবার তাদের সেবা নেব এবং অন্যদেরও সুপারিশ করব।'
   },
   {
     id: 2,
-    name: 'Sarah Williams',
+    name: 'Ipshita Akter',
     profession: 'Business Owner',
-    image: '/img/testimonial-2.jpg',
-    text: 'Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.'
+    image: '/img/review2.png',
+    text: 'আমার অফিসের সব এসি মেইনটেনেন্স তারাই করে। খুবই নির্ভরযোগ্য এবং পেশাদার। সময়মতো কাজ শেষ করে এবং দাম খুব যুক্তিসংগত। গুণগত সেবার জন্য ধন্যবাদ।'
   },
   {
     id: 3,
-    name: 'David Rodriguez',
+    name: 'Faiaz Ahmed',
     profession: 'Property Manager',
-    image: '/img/testimonial-3.jpg',
-    text: 'Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.'
+    image: '/img/review3.png',
+    text: 'আমি তাদের ২৪/৭ সার্ভিসে খুবই সন্তুষ্ট। গ্রীষ্মের গরমে রাতে এসি নষ্ট হলে তারা এসে ঠিক করে দিয়েছেন। দ্রুত সেবা এবং পেশাদার আচরণের জন্য তাদের প্রশংসা করি।'
   }
 ];

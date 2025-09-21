@@ -5,6 +5,7 @@ import FeaturesSection from '@/components/sections/FeaturesSection';
 import ServicesGrid from '@/components/sections/ServicesGrid';
 import QuoteForm from '@/components/sections/QuoteForm';
 import TestimonialsCarousel from '@/components/sections/TestimonialsCarousel';
+import CertificateSection from '@/components/sections/CertificateSection';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ServicesGrid />
       <QuoteForm />
       <TestimonialsCarousel />
+      <CertificateSection />
     </>
   );
 }

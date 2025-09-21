@@ -94,16 +94,22 @@ const Footer = () => {
             <h3 className="text-white text-base xs:text-lg lg:text-xl font-semibold mb-3 xs:mb-4 text-center sm:text-left">Our Services</h3>
             <div className="space-y-2">
               <Link href="/services" className="block text-gray-400 hover:text-primary transition-colors duration-300 text-sm lg:text-base py-1">
-                AC Installation
+                AC Hydrowash
               </Link>
               <Link href="/services" className="block text-gray-400 hover:text-primary transition-colors duration-300 text-sm lg:text-base py-1">
-                Cooling Services
+                AC Master Cleaning
               </Link>
               <Link href="/services" className="block text-gray-400 hover:text-primary transition-colors duration-300 text-sm lg:text-base py-1">
-                Heating Services
+                AC Leakage Repair & Gas Charge
               </Link>
               <Link href="/services" className="block text-gray-400 hover:text-primary transition-colors duration-300 text-sm lg:text-base py-1">
-                Annual Inspections
+                AC Fitting & Shifting
+              </Link>
+              <Link href="/services" className="block text-gray-400 hover:text-primary transition-colors duration-300 text-sm lg:text-base py-1">
+                AC Water Dropping Problem Solving
+              </Link>
+              <Link href="/services" className="block text-gray-400 hover:text-primary transition-colors duration-300 text-sm lg:text-base py-1">
+                AC Circuit Repair
               </Link>
             </div>
           </div>
