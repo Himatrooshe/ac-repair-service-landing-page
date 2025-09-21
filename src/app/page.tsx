@@ -3,7 +3,7 @@ import AboutSection from '@/components/sections/AboutSection';
 import FactsCounter from '@/components/sections/FactsCounter';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import ServicesGrid from '@/components/sections/ServicesGrid';
-import QuoteForm from '@/components/sections/QuoteForm';
+// import QuoteForm from '@/components/sections/QuoteForm'; // Commented out - will work on it later
 import TestimonialsCarousel from '@/components/sections/TestimonialsCarousel';
 import CertificateSection from '@/components/sections/CertificateSection';
 
@@ -15,7 +15,7 @@ export default function Home() {
       <FactsCounter />
       <FeaturesSection />
       <ServicesGrid />
-      <QuoteForm />
+      {/* <QuoteForm /> */} {/* Commented out - will work on it later */}
       <TestimonialsCarousel />
       <CertificateSection />
     </>

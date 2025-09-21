@@ -95,20 +95,20 @@ const Header = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
               <Link href="/" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[80px] justify-center btn-shine">
-                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Home</span>
-                <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Home</span>
+                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:-translate-y-full">Home</span>
+                <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Home</span>
               </Link>
               <Link href="/about" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[100px] justify-center btn-shine">
-                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-150 ease-in-out group-hover:-translate-y-full">About Us</span>
-                <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">About Us</span>
+                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:-translate-y-full">About Us</span>
+                <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">About Us</span>
               </Link>
               <Link href="/services" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[130px] justify-center whitespace-nowrap btn-shine">
-                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Our Services</span>
-                <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Our Services</span>
+                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:-translate-y-full">Our Services</span>
+                <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Our Services</span>
               </Link>
               <Link href="/contact" className="text-gray-800 font-medium px-4 py-2 lg:px-5 lg:py-3 xl:px-6 xl:py-3 rounded-lg relative overflow-hidden group h-12 flex items-center min-w-[120px] justify-center whitespace-nowrap btn-shine">
-                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Contact Us</span>
-                <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Contact Us</span>
+                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:-translate-y-full">Contact Us</span>
+                <span className="absolute inset-0 flex items-center justify-center text-primary transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Contact Us</span>
               </Link>
             </div>
 
@@ -142,20 +142,20 @@ const Header = () => {
             <div className="md:hidden bg-white/10 backdrop-blur-xl border-t border-white/20" style={{backdropFilter: 'blur(20px) saturate(180%)'}}>
               <div className="px-3 pt-3 pb-4 space-y-2">
                 <Link href="/" className="px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base btn-shine">
-                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Home</span>
-                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Home</span>
+                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-500 ease-out group-hover:-translate-y-full">Home</span>
+                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Home</span>
                 </Link>
                 <Link href="/about" className=" px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base btn-shine">
-                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-150 ease-in-out group-hover:-translate-y-full">About Us</span>
-                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">About Us</span>
+                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-500 ease-out group-hover:-translate-y-full">About Us</span>
+                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">About Us</span>
                 </Link>
                 <Link href="/services" className="px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base btn-shine">
-                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Our Services</span>
-                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Our Services</span>
+                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-500 ease-out group-hover:-translate-y-full">Our Services</span>
+                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Our Services</span>
                 </Link>
                 <Link href="/contact" className="px-3 py-2 sm:px-4 sm:py-3 text-gray-800 rounded-lg relative overflow-hidden group h-10 sm:h-12 flex items-center text-sm sm:text-base btn-shine">
-                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-150 ease-in-out group-hover:-translate-y-full">Contact Us</span>
-                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-150 ease-in-out translate-y-full group-hover:translate-y-0">Contact Us</span>
+                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 transition-transform duration-500 ease-out group-hover:-translate-y-full">Contact Us</span>
+                  <span className="absolute inset-0 flex items-center px-3 sm:px-4 text-primary transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">Contact Us</span>
                 </Link>
                 
                 {/* Mobile Social Icons */}

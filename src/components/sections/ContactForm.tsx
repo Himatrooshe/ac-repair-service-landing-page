@@ -141,13 +141,15 @@ const ContactForm = () => {
           <select
             {...register('service')}
             id="service"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           >
             <option value="">Select a service</option>
-            <option value="AC Repair">AC Repair</option>
-            <option value="Maintenance">Maintenance</option>
-            <option value="Installation">New Installation</option>
-            <option value="Emergency">Emergency Service</option>
+            <option value="AC Hydrowash">AC Hydrowash</option>
+            <option value="AC Master Cleaning">AC Master Cleaning</option>
+            <option value="AC Leakage Repair & Gas Charge">AC Leakage Repair & Gas Charge</option>
+            <option value="AC Fitting & Shifting">AC Fitting & Shifting</option>
+            <option value="AC Water Dropping Problem Solving">AC Water Dropping Problem Solving</option>
+            <option value="AC Circuit Repair">AC Circuit Repair</option>
           </select>
           {errors.service && (
             <p className="text-red-500 text-sm mt-1">{errors.service.message}</p>
@@ -176,7 +178,7 @@ const ContactForm = () => {
           className={`w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center ${
             isSubmitting
               ? 'bg-gray-400 cursor-not-allowed text-white'
-              : 'bg-blue-600 hover:bg-blue-700 text-white btn-hover-lift'
+              : 'bg-orange-400 hover:bg-orange-500 text-white btn-hover-lift'
           }`}
         >
           {isSubmitting ? (
@@ -190,10 +192,10 @@ const ContactForm = () => {
         </button>
       </form>
       
-      <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-        <p className="text-sm text-blue-800">
+      <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+        <p className="text-sm text-orange-800">
           <strong>Need immediate assistance?</strong> Call our emergency line: 
-          <span className="font-semibold text-red-600"> (555) 911-COOL</span>
+          <span className="font-semibold text-red-600"> +8801324-718981</span>
         </p>
       </div>
     </div>

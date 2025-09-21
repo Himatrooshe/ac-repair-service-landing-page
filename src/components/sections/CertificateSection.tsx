@@ -165,7 +165,7 @@ const CertificateSection = () => {
               <div className="bg-gradient-to-r from-primary/10 to-orange-500/10 rounded-2xl p-6 border border-primary/20">
                 <div className="flex items-center justify-between">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-1">500+</div>
+                    <div className="text-2xl font-bold text-primary mb-1">200+</div>
                     <div className="text-sm text-gray-600">Satisfied Clients</div>
                   </div>
                   <div className="text-center">
