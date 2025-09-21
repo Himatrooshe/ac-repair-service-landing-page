@@ -58,13 +58,13 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4 md:space-x-6 lg:space-x-8">
-              <div className="flex items-center">
-                <Phone className="w-3 h-3 md:w-4 md:h-4 mr-2 floaty" />
-                <a href="tel:+8801324718981" className="text-xs md:text-sm hover:text-primary transition-colors">+8801324-718981</a>
+              <div className="flex items-center relative z-10">
+                <Phone className="w-3 h-3 md:w-4 md:h-4 mr-2" />
+                <a href="tel:+8801324718981" className="text-xs md:text-sm hover:text-primary transition-colors cursor-pointer underline hover:no-underline font-medium relative z-10" style={{pointerEvents: 'auto'}}>+8801324-718981</a>
               </div>
-              <div className="flex items-center">
-                <Mail className="w-3 h-3 md:w-4 md:h-4 mr-2 floaty" />
-                <a href="mailto:homeelectrainternational@gmail.com" className="text-xs md:text-sm truncate max-w-[200px] lg:max-w-none hover:text-primary transition-colors">homeelectrainternational@gmail.com</a>
+              <div className="flex items-center relative z-10">
+                <Mail className="w-3 h-3 md:w-4 md:h-4 mr-2" />
+                <a href="mailto:homeelectrainternational@gmail.com" className="text-xs md:text-sm truncate max-w-[200px] lg:max-w-none hover:text-primary transition-colors cursor-pointer underline hover:no-underline font-medium relative z-10" style={{pointerEvents: 'auto'}}>homeelectrainternational@gmail.com</a>
               </div>
             </div>
             <nav className="hidden lg:flex items-center space-x-4">    

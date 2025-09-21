@@ -5,7 +5,7 @@ import Lenis from 'lenis';
 
 export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
-  const rafRef = useRef<number>();
+  const rafRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     // Initialize Lenis with optimized settings
@@ -29,14 +29,14 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
     rafRef.current = requestAnimationFrame(raf);
 
     // Integrate with GSAP ScrollTrigger if available
-    if (typeof window !== 'undefined' && window.gsap && window.gsap.registerPlugin) {
+    if (typeof window !== 'undefined') {
       try {
-        const { ScrollTrigger } = window.gsap;
-        if (ScrollTrigger) {
-          lenisRef.current.on('scroll', ScrollTrigger.update);
-          ScrollTrigger.refresh();
+        const gsap = (window as typeof window & { gsap?: { ScrollTrigger?: { update: () => void; refresh: () => void } } }).gsap;
+        if (gsap?.ScrollTrigger) {
+          lenisRef.current.on('scroll', gsap.ScrollTrigger.update);
+          gsap.ScrollTrigger.refresh();
         }
-      } catch (error) {
+      } catch {
         console.log('ScrollTrigger integration skipped');
       }
     }

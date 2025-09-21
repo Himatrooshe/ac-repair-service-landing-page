@@ -4,145 +4,198 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { ContactForm as ContactFormType } from '@/types';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email'),
-  subject: z.string().min(5, 'Subject must be at least 5 characters'),
+  phone: z.string().min(10, 'Phone number must be at least 10 characters'),
+  service: z.string().min(1, 'Please select a service'),
   message: z.string().min(10, 'Message must be at least 10 characters')
 });
 
+type ContactFormData = z.infer<typeof contactSchema>;
+
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error';
+    message: string;
+  } | null>(null);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset
-  } = useForm<ContactFormType>({
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema)
   });
 
-  const onSubmit = async (data: ContactFormType) => {
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
+    setSubmitStatus(null);
+
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Contact form submitted:', data);
-      setIsSubmitted(true);
+      // Replace this URL with your Google Apps Script web app URL
+      const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxEhisj0zUTeELPj-OLJuP0JltqICAlOPhRoVoHDqcsgSGYjCKjfVND5zy6iO3t0YKDVw/exec';
+      
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        mode: 'no-cors' // Required for Google Apps Script
+      });
+
+      // Since we're using no-cors, we can't read the response
+      // We'll assume success if no error is thrown
+      
+      // Reset form
       reset();
+      
+      // Set success status
+      setSubmitStatus({
+        type: 'success',
+        message: 'We have received your contact info, thanks! We will get back to you within 24 hours.'
+      });
+
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Form submission error:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again or call us directly.'
+      });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  if (isSubmitted) {
-    return (
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h3 className="text-2xl font-bold text-dark mb-4">Message Sent Successfully!</h3>
-          <p className="text-gray-600 mb-6">
-            Thank you for contacting us. We will get back to you within 24 hours.
-          </p>
-          <button
-            onClick={() => setIsSubmitted(false)}
-            className="btn-primary"
-          >
-            Send Another Message
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="bg-white p-4 xs:p-5 sm:p-6 md:p-8 rounded-lg shadow-lg">
-      <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-dark mb-3 xs:mb-4 sm:mb-5 md:mb-6 leading-tight">If You Have Any Query, Please Contact Us</h2>
-
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 xs:space-y-5 sm:space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 xs:gap-5 sm:gap-6">
-          <div>
-            <label htmlFor="name" className="block text-xs xs:text-sm font-medium text-gray-700 mb-1 xs:mb-2">
-              Your Name
-            </label>
-            <input
-              {...register('name')}
-              type="text"
-              id="name"
-              className="form-control text-sm xs:text-base"
-              placeholder="Your Name"
-            />
-            {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-            )}
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-xs xs:text-sm font-medium text-gray-700 mb-1 xs:mb-2">
-              Your Email
-            </label>
-            <input
-              {...register('email')}
-              type="email"
-              id="email"
-              className="form-control text-sm xs:text-base"
-              placeholder="Your Email"
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-            )}
-          </div>
+    <div className="bg-white rounded-lg shadow-lg p-8">
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+      
+      {submitStatus && (
+        <div className={`mb-6 p-4 rounded-lg ${
+          submitStatus.type === 'success' 
+            ? 'bg-green-50 text-green-800 border border-green-200' 
+            : 'bg-red-50 text-red-800 border border-red-200'
+        }`}>
+          {submitStatus.message}
         </div>
-
+      )}
+      
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-            Subject
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            Full Name *
           </label>
           <input
-            {...register('subject')}
+            {...register('name')}
             type="text"
-            id="subject"
-            className="form-control"
-            placeholder="Subject"
+            id="name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="Your full name"
           />
-          {errors.subject && (
-            <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+          {errors.name && (
+            <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
           )}
         </div>
-
+        
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            Email Address *
+          </label>
+          <input
+            {...register('email')}
+            type="email"
+            id="email"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="your.email@example.com"
+          />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+          )}
+        </div>
+        
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+            Phone Number *
+          </label>
+          <input
+            {...register('phone')}
+            type="tel"
+            id="phone"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="(555) 123-4567"
+          />
+          {errors.phone && (
+            <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+          )}
+        </div>
+        
+        <div>
+          <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+            Service Needed *
+          </label>
+          <select
+            {...register('service')}
+            id="service"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="">Select a service</option>
+            <option value="AC Repair">AC Repair</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Installation">New Installation</option>
+            <option value="Emergency">Emergency Service</option>
+          </select>
+          {errors.service && (
+            <p className="text-red-500 text-sm mt-1">{errors.service.message}</p>
+          )}
+        </div>
+        
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-            Message
+            Message *
           </label>
           <textarea
             {...register('message')}
             id="message"
-            rows={6}
-            className="form-control"
-            placeholder="Leave a message here..."
+            rows={4}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="Describe your AC issue or service needs..."
           />
           {errors.message && (
             <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
           )}
         </div>
-
+        
         <button
           type="submit"
           disabled={isSubmitting}
-          className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+          className={`w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center ${
+            isSubmitting
+              ? 'bg-gray-400 cursor-not-allowed text-white'
+              : 'bg-blue-600 hover:bg-blue-700 text-white btn-hover-lift'
+          }`}
         >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
+          {isSubmitting ? (
+            <>
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+              <span>Sending...</span>
+            </>
+          ) : (
+            'Send Message'
+          )}
         </button>
       </form>
+      
+      <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+        <p className="text-sm text-blue-800">
+          <strong>Need immediate assistance?</strong> Call our emergency line: 
+          <span className="font-semibold text-red-600"> (555) 911-COOL</span>
+        </p>
+      </div>
     </div>
   );
 };
