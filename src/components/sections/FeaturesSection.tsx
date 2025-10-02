@@ -14,7 +14,7 @@ const FeaturesSection = () => {
               Why Customers Trust Our Services!
             </h2>
             <p className="text-gray-600 mb-12 text-lg leading-relaxed">
-              Discover what sets us apart in the HVAC industry. Our commitment to excellence, skilled technicians, and customer-first approach make us the preferred choice for heating and cooling solutions across Bangladesh.
+              Discover what sets us apart in the Air Conditioning industry. Our commitment to excellence, skilled technicians, and customer-first approach make us the preferred choice for heating and cooling solutions across Bangladesh.
             </p>
 
             <div className="space-y-8">

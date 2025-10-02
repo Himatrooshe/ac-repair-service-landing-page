@@ -29,7 +29,7 @@ const CertificateSection = () => {
     {
       icon: Award,
       title: "Industry Leader",
-      description: "Recognized excellence in HVAC services",
+      description: "Recognized excellence in Air Conditioning services",
       delay: 0.2
     },
     {
@@ -75,7 +75,7 @@ const CertificateSection = () => {
               Certified Excellence
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Our commitment to quality and professional standards is backed by industry certifications and years of proven expertise in HVAC services.
+              Our commitment to quality and professional standards is backed by industry certifications and years of proven expertise in Air Conditioning services.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ const CertificateSection = () => {
                 <div className="relative p-6">
                   <div className="relative h-96 lg:h-[450px] rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="/img/certificate.jpg"
+                      src="/img/og_certificate.jpg"
                       alt="Professional AC Repair Service Certificate"
                       fill
                       className="object-contain transition-transform duration-700 group-hover:scale-110"
@@ -129,7 +129,7 @@ const CertificateSection = () => {
                   Professional Certification & Quality Assurance
                 </h3>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  We take pride in our certified expertise and commitment to maintaining the highest standards in the HVAC industry. Our team undergoes continuous training and certification to ensure top-quality service delivery.
+                  We take pride in our certified expertise and commitment to maintaining the highest standards in the Air Conditioning industry. Our team undergoes continuous training and certification to ensure top-quality service delivery.
                 </p>
               </div>
 
@@ -187,6 +187,136 @@ const CertificateSection = () => {
                     <Award className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform duration-300" />
                   </span>
                 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Work Orders Section */}
+        <div className="mt-20 pt-16 border-t border-gray-200">
+          <div className="text-center mb-12">
+            <div className={`transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <h3 className="text-3xl lg:text-4xl font-bold text-dark mb-4">
+                Prestigious Client Work Orders
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Trusted by prestigious institutions including diplomatic missions and leading universities
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Royal Embassy Work Order */}
+            <div className={`transform transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                {/* Premium Border */}
+                <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-green-500 to-green-600 p-1 rounded-2xl">
+                  <div className="bg-white rounded-2xl h-full w-full"></div>
+                </div>
+                
+                <div className="relative p-6">
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="text-xl font-bold text-dark">Royal Embassy of Saudi Arabia</h4>
+                      <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        Diplomatic Client
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-sm">Official Work Order - Compressor Supply Contract</p>
+                  </div>
+                  
+                  <div className="relative h-80 rounded-xl overflow-hidden shadow-lg mb-4">
+                    <Image
+                      src="/img/emb_order.jpg"
+                      alt="Royal Embassy of Saudi Arabia Work Order"
+                      fill
+                      className="object-contain transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  
+                  <div className="flex items-center justify-between text-sm text-gray-600">
+                    <span>Contract Value: 1,872,000 Taka</span>
+                    <span className="flex items-center">
+                      <Shield className="w-4 h-4 mr-1 text-green-600" />
+                      Verified
+                    </span>
+                  </div>
+                </div>
+
+                {/* Floating Badge */}
+                <div className="absolute -top-3 -right-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg transform rotate-12">
+                  Embassy Approved
+                </div>
+              </div>
+            </div>
+
+            {/* East West University Work Order */}
+            <div className={`transform transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                {/* Premium Border */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 p-1 rounded-2xl">
+                  <div className="bg-white rounded-2xl h-full w-full"></div>
+                </div>
+                
+                <div className="relative p-6">
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="text-xl font-bold text-dark">East West University</h4>
+                      <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        Academic Client
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-sm">Work Order - AC Installation & Maintenance</p>
+                  </div>
+                  
+                  <div className="relative h-80 rounded-xl overflow-hidden shadow-lg mb-4">
+                    <Image
+                      src="/img/east_order.jpg"
+                      alt="East West University Work Order"
+                      fill
+                      className="object-contain transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  
+                  <div className="flex items-center justify-between text-sm text-gray-600">
+                    <span>Project: Academic Building AC Systems</span>
+                    <span className="flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-1 text-blue-600" />
+                      Completed
+                    </span>
+                  </div>
+                </div>
+
+                {/* Floating Badge */}
+                <div className="absolute -top-3 -right-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg transform rotate-12">
+                  University Approved
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Client Trust Section */}
+          <div className={`mt-12 text-center transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h4 className="text-2xl font-bold text-dark mb-4">Trusted by Leading Institutions</h4>
+              <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Our expertise is recognized by prestigious clients including diplomatic missions and top universities. 
+                These official work orders demonstrate our capability to handle large-scale, high-profile projects with 
+                the highest standards of professionalism and quality.
+              </p>
+              <div className="flex items-center justify-center mt-6 space-x-8">
+                <div className="flex items-center text-gray-600">
+                  <Award className="w-5 h-5 mr-2 text-primary" />
+                  <span className="font-semibold">Diplomatic Contracts</span>
+                </div>
+                <div className="flex items-center text-gray-600">
+                  <Star className="w-5 h-5 mr-2 text-primary" />
+                  <span className="font-semibold">Academic Partnerships</span>
+                </div>
+                <div className="flex items-center text-gray-600">
+                  <Shield className="w-5 h-5 mr-2 text-primary" />
+                  <span className="font-semibold">Verified Excellence</span>
+                </div>
               </div>
             </div>
           </div>

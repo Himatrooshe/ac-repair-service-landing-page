@@ -18,8 +18,8 @@ const robotoSlab = Roboto_Slab({
 
 export const metadata: Metadata = {
   title: "Home Electronic Service",
-  description: "Professional AC repair and HVAC services. Expert technicians providing quality heating and cooling solutions.",
-  keywords: "AC repair, HVAC services, heating, cooling, air conditioning, maintenance",
+  description: "Professional AC repair and Air Conditioning services. Expert technicians providing quality heating and cooling solutions.",
+  keywords: "AC repair, Air Conditioning services, heating, cooling, air conditioning, maintenance",
 };
 
 export default function RootLayout({

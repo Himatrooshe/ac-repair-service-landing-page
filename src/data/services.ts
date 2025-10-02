@@ -22,7 +22,7 @@ export const services: Service[] = [
   {
     id: 4,
     title: 'এসি ফিটিং এবং শিফটিং',
-    image: '/img/s3.png',
+    image: '/img/ser4.jpg',
     icon: '/img/icon/icon-04-light.png'
   },
   {
@@ -34,7 +34,7 @@ export const services: Service[] = [
   {
     id: 6,
     title: 'এসি সার্কিট মেরামত',
-    image: '/img/p2.png',
+    image: '/img/c.png',
     icon: '/img/icon/icon-06-light.png'
   }
 ];

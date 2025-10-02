@@ -15,7 +15,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 2,
     name: 'Sarah Johnson',
-    position: 'HVAC Specialist',
+    position: 'Air Conditioning Specialist',
     image: '/img/team-2.jpg',
     social: {
       facebook: '#',

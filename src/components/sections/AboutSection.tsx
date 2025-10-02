@@ -63,7 +63,7 @@ const AboutSection = () => {
           {/* Content */}
           <div ref={contentRef} className="order-2 lg:order-1">
             <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-shimmer mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 leading-tight px-2 lg:px-0">
-              Best Cooling & Heating Service Center in Bangladesh
+              Best Cooling Service Center in Bangladesh
             </h2>
             
             <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 gap-3 xs:gap-4 sm:gap-6 mb-4 xs:mb-5 sm:mb-6 md:mb-8">
@@ -90,7 +90,7 @@ const AboutSection = () => {
             </div>
 
             <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed">
-              Home Electra International is Bangladesh&apos;s premier cooling and heating service provider, offering comprehensive HVAC solutions for both residential and commercial clients. Our experienced technicians specialize in AC installation, repair, maintenance, and emergency services to ensure your comfort throughout the year.
+              Home Electra International is Bangladesh&apos;s premier cooling and heating service provider, offering comprehensive Air Conditioning solutions for both residential and commercial clients. Our experienced technicians specialize in AC installation, repair, maintenance, and emergency services to ensure your comfort throughout the year.
             </p>
 
             <div className="border-t border-gray-200 pt-6 sm:pt-8">
@@ -105,7 +105,7 @@ const AboutSection = () => {
                   <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 hover-glow">
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
-                  <a href="mailto:homeelectrainternational@gmail.com" className="text-xs sm:text-sm lg:text-base xl:text-lg font-semibold text-dark break-all hover:text-primary transition-colors cursor-pointer underline hover:no-underline relative z-10" style={{pointerEvents: 'auto'}}>homeelectrainternational@gmail.com</a>
+                  <a href="mailto:homeelectrainternational@gmail.com" className="text-xs sm:text-sm lg:text-base xl:text-lg font-semibold text-dark whitespace-nowrap hover:text-primary transition-colors cursor-pointer underline hover:no-underline relative z-10" style={{pointerEvents: 'auto'}}>homeelectrainternational@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -146,7 +146,7 @@ const AboutSection = () => {
               </div>
               <div>
                 <Image
-                  src="/img/about-4.jpg"
+                  src="/img/aa1.png"
                   alt="About us"
                   width={300}
                   height={200}
