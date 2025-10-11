@@ -1,59 +1,32 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Phone, Mail } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const imagesRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
 
-    if (sectionRef.current && contentRef.current && imagesRef.current) {
-      // Animate content from left
-      gsap.fromTo(contentRef.current, 
-        { opacity: 0, x: -100 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Animate images from right with stagger
-      const images = imagesRef.current.querySelectorAll('img');
-      gsap.fromTo(images,
-        { opacity: 0, x: 100, scale: 0.8 },
-        {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-    }
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -61,7 +34,13 @@ const AboutSection = () => {
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Content */}
-          <div ref={contentRef} className="order-2 lg:order-1">
+          <div 
+            className={`order-2 lg:order-1 transition-all duration-700 ease-out ${
+              isVisible 
+                ? 'opacity-100 translate-x-0' 
+                : 'opacity-0 -translate-x-8'
+            }`}
+          >
             <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-shimmer mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 leading-tight px-2 lg:px-0">
               Best Cooling Service Center in Bangladesh
             </h2>
@@ -112,45 +91,70 @@ const AboutSection = () => {
           </div>
 
           {/* Images */}
-          <div ref={imagesRef} className="grid grid-cols-2 gap-2 sm:gap-4 lg:gap-6 mt-8 lg:mt-0">
+          <div 
+            className={`grid grid-cols-2 gap-2 sm:gap-4 lg:gap-6 mt-8 lg:mt-0 transition-all duration-700 ease-out delay-200 ${
+              isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="space-y-2 sm:space-y-4">
               <div className="text-right">
                 <Image
-                  src="/img/p2.png"
+                  src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177899/p2_laosgp.png"
                   alt="About us"
                   width={300}
                   height={400}
-                  className="w-3/4 ml-auto rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-                  style={{ marginTop: '15%' }}
+                  className={`w-3/4 ml-auto rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out ${
+                    isVisible 
+                      ? 'opacity-100 scale-100 translate-y-0' 
+                      : 'opacity-0 scale-95 translate-y-4'
+                  }`}
+                  style={{ marginTop: '15%', transitionDelay: '300ms' }}
                 />
               </div>
               <div className="text-right">
                 <Image
-                  src="/img/about-3.jpg"
+                  src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177893/about-3_rc1qiz.jpg"
                   alt="About us"
                   width={200}
                   height={200}
-                  className="w-1/2 sm:w-2/3 lg:w-1/2 ml-auto rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                  className={`w-1/2 sm:w-2/3 lg:w-1/2 ml-auto rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out ${
+                    isVisible 
+                      ? 'opacity-100 scale-100 translate-y-0' 
+                      : 'opacity-0 scale-95 translate-y-4'
+                  }`}
+                  style={{ transitionDelay: '500ms' }}
                 />
               </div>
             </div>
             <div className="space-y-2 sm:space-y-4">
               <div>
                 <Image
-                  src="/img/p1.png"
+                  src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177897/p1_vkibnw.png"
                   alt="About us"
                   width={400}
                   height={300}
-                  className="w-full rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                  className={`w-full rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out ${
+                    isVisible 
+                      ? 'opacity-100 scale-100 translate-y-0' 
+                      : 'opacity-0 scale-95 translate-y-4'
+                  }`}
+                  style={{ transitionDelay: '400ms' }}
                 />
               </div>
               <div>
                 <Image
-                  src="/img/aa1.png"
+                  src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177896/aa1_b4zctq.png"
                   alt="About us"
                   width={300}
                   height={200}
-                  className="w-3/4 sm:w-4/5 lg:w-3/4 rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                  className={`w-3/4 sm:w-4/5 lg:w-3/4 rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out ${
+                    isVisible 
+                      ? 'opacity-100 scale-100 translate-y-0' 
+                      : 'opacity-0 scale-95 translate-y-4'
+                  }`}
+                  style={{ transitionDelay: '600ms' }}
                 />
               </div>
             </div>

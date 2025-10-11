@@ -46,7 +46,7 @@ const FeaturesSection = () => {
           <div className="animate-fade-in">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl hover-glow tilt">
               <Image
-                src="/img/feature.jpg"
+                src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177900/feature_outsir.jpg"
                 alt="Features"
                 width={600}
                 height={500}

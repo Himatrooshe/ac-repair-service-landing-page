@@ -99,7 +99,7 @@ const AdvisorySection = () => {
               Our Distinguished Advisor
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Backed by decades of engineering excellence and industrial leadership in Bangladesh's most prestigious organizations
+              Backed by decades of engineering excellence and industrial leadership in Bangladesh&apos;s most prestigious organizations
             </p>
           </div>
         </div>
@@ -210,7 +210,7 @@ const AdvisorySection = () => {
               Distinguished Career Journey
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Key leadership roles in Bangladesh's most prominent industrial organizations
+              Key leadership roles in Bangladesh&apos;s most prominent industrial organizations
             </p>
           </div>
 

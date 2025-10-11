@@ -95,7 +95,7 @@ const CertificateSection = () => {
                 <div className="relative p-6">
                   <div className="relative h-96 lg:h-[450px] rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="/img/og_certificate.jpg"
+                      src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177902/og_certificate_lzuofy.jpg"
                       alt="Professional AC Repair Service Certificate"
                       fill
                       className="object-contain transition-transform duration-700 group-hover:scale-110"
@@ -227,7 +227,7 @@ const CertificateSection = () => {
                   
                   <div className="relative h-80 rounded-xl overflow-hidden shadow-lg mb-4">
                     <Image
-                      src="/img/emb_order.jpg"
+                      src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177895/emb_order_kivj4n.jpg"
                       alt="Royal Embassy of Saudi Arabia Work Order"
                       fill
                       className="object-contain transition-transform duration-700 group-hover:scale-110"
@@ -271,7 +271,7 @@ const CertificateSection = () => {
                   
                   <div className="relative h-80 rounded-xl overflow-hidden shadow-lg mb-4">
                     <Image
-                      src="/img/east_order.jpg"
+                      src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177894/east_order_zggezv.jpg"
                       alt="East West University Work Order"
                       fill
                       className="object-contain transition-transform duration-700 group-hover:scale-110"

@@ -64,7 +64,7 @@ const HeroCarousel = () => {
     <div ref={heroRef} className="relative h-screen min-h-[500px] max-h-[900px] overflow-hidden aurora noise">
       {/* Background Image */}
       <Image
-        src="/img/besthero.png"
+        src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177908/besthero_lqb3ng.png"
         alt="Hero Background"
         fill
         className="object-cover object-center sm:object-[60%_center]"

@@ -195,7 +195,7 @@ const ContactForm = () => {
       <div className="mt-6 p-4 bg-orange-50 rounded-lg">
         <p className="text-sm text-orange-800">
           <strong>Need immediate assistance?</strong> Call our emergency line: 
-          <span className="font-semibold text-red-600"> +8801324-718981</span>
+          <span className="font-semibold text-red-600"> +880 1324 718981</span>
         </p>
       </div>
     </div>
