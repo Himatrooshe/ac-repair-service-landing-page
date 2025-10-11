@@ -119,7 +119,7 @@ const AdvisorySection = () => {
                 <div className="relative p-6">
                   <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="/img/saiful.jpg"
+                      src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177906/saiful_thc60o.jpg"
                       alt="Engr. Saiful Alam - Distinguished Advisor"
                       fill
                       className="object-contain transition-transform duration-700 group-hover:scale-110"
