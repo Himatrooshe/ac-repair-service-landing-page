@@ -80,7 +80,7 @@ const ReviewRequestSection = () => {
       href: "#" 
     },
     { 
-      src: "https://res.cloudinary.com/dxcjpicou/image/upload/v1760184578/PHP-Family-Logo_iokzlx.webp", 
+      src: "https://res.cloudinary.com/dxcjpicou/image/upload/v1760203799/PHP_fvwzpp.png", 
       alt: "PHP Family", 
       title: "PHP Family",
       href: "#" 
