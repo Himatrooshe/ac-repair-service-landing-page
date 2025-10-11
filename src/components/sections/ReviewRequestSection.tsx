@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { Star, MessageCircle, Smartphone, Heart, Award, Building2 } from 'lucide-react';
+import { Star, MessageCircle, Smartphone, Heart, Award } from 'lucide-react';
 import LogoLoop from '@/components/ui/LogoLoop';
 
 const ReviewRequestSection = () => {
@@ -167,9 +167,9 @@ const ReviewRequestSection = () => {
                     <ol className="text-xs sm:text-sm text-gray-600 space-y-1">
                       <li>1. Scan the QR code with your phone camera</li>
                       <li>2. Click on the Google Maps link</li>
-                      <li>3. Tap "Write a review"</li>
+                      <li>3. Tap &quot;Write a review&quot;</li>
                       <li>4. Select your star rating and write your experience</li>
-                      <li>5. Tap "Post" - Done! 🎉</li>
+                      <li>5. Tap &quot;Post&quot; - Done! 🎉</li>
                     </ol>
                   </div>
                 </div>

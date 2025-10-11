@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 interface LogoItem {
   node?: React.ReactNode;
@@ -26,13 +27,10 @@ interface LogoLoopProps {
 
 const LogoLoop: React.FC<LogoLoopProps> = ({
   logos,
-  speed = 80,
-  direction = 'left',
   logoHeight = 64,
   gap = 20,
   pauseOnHover = false,
   scaleOnHover = false,
-  fadeOut = true,
   fadeOutColor = '#ffffff',
   ariaLabel = 'Logo carousel',
   className = ''
@@ -64,11 +62,12 @@ const LogoLoop: React.FC<LogoLoopProps> = ({
             {logo.node}
           </div>
         ) : logo.src ? (
-          <img
+          <Image
             src={logo.src}
             alt={logo.alt || `Logo ${index + 1}`}
+            width={logoHeight * 2}
+            height={logoHeight}
             className="max-h-full max-w-full object-contain transition-all duration-300 opacity-90 hover:opacity-100"
-            style={{ height: logoHeight }}
           />
         ) : null}
       </div>
