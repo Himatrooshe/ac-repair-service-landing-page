@@ -21,5 +21,6 @@ export const testimonials: Testimonial[] = [
     profession: 'Director of Dhaka Chamber of Commerce & Industries',
     image: 'https://res.cloudinary.com/dxcjpicou/image/upload/v1760177905/r3_jbow5m.jpg',
     text: 'আমি তাদের ২৪/৭ সার্ভিসে খুবই সন্তুষ্ট। গ্রীষ্মের গরমে রাতে এসি নষ্ট হলে তারা এসে ঠিক করে দিয়েছেন। দ্রুত সেবা এবং পেশাদার আচরণের জন্য তাদের প্রশংসা করি।'
-  }
+  },
+  
 ];
