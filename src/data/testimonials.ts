@@ -11,7 +11,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 2,
     name: '',
-    profession: 'Owner of Makeover by Anmon',
+    profession: "Owner of Makeover by Anmon's",
     image: 'https://res.cloudinary.com/dxcjpicou/image/upload/v1760177903/r1_quyxyn.jpg',
     text: 'আমার অফিসের সব এসি মেইনটেনেন্স তারাই করে। খুবই নির্ভরযোগ্য এবং পেশাদার। সময়মতো কাজ শেষ করে এবং দাম খুব যুক্তিসংগত। গুণগত সেবার জন্য ধন্যবাদ।'
   },
