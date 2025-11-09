@@ -86,7 +86,7 @@ const HeroCarousel = () => {
               <p className="text-sm xs:text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-100/90 mb-6 xs:mb-7 sm:mb-8 lg:mb-10 max-w-[320px] xs:max-w-[400px] sm:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto md:mx-0 backdrop-blur-sm bg-white/10 rounded-lg sm:rounded-xl p-3 xs:p-4 sm:p-5 lg:p-6 border border-white/20 shadow-2xl transform transition-all duration-500 hover:bg-white/15 leading-relaxed">
                 {slide.description}
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 max-w-[320px] xs:max-w-[400px] sm:max-w-none mx-auto md:mx-0">
                 <button className="btn-primary text-sm sm:text-base lg:text-lg w-full sm:w-auto min-w-[180px] sm:min-w-[200px] hover-glow">
                   <span className="relative z-10">{slide.buttonText}</span>
                 </button>
