@@ -1,46 +1,15 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Phone, Mail } from 'lucide-react';
 
 const AboutSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.3,
-        rootMargin: '0px 0px -100px 0px'
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-pattern">
+    <section className="py-8 xs:py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-pattern">
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Content */}
-          <div 
-            className={`order-2 lg:order-1 transition-all duration-700 ease-out ${
-              isVisible 
-                ? 'opacity-100 translate-x-0' 
-                : 'opacity-0 -translate-x-8'
-            }`}
-          >
+          <div className="order-2 lg:order-1">
             <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-shimmer mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 leading-tight px-2 lg:px-0">
               Best Cooling Service Center in Bangladesh
             </h2>
@@ -50,9 +19,9 @@ const AboutSection = () => {
                 <Image
                   src="/img/icon/icon-07-primary.png"
                   alt="Expert Technician"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 mr-2 xs:mr-3 sm:mr-4 flex-shrink-0"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 mr-2 xs:mr-3 sm:mr-4 flex-shrink-0"
                 />
                 <h3 className="text-sm xs:text-base sm:text-lg md:text-xl font-semibold text-dark">Expert Technician</h3>
               </div>
@@ -62,9 +31,9 @@ const AboutSection = () => {
                   alt="Best Quality Services"
                   width={32}
                   height={32}
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mr-3 sm:mr-4 flex-shrink-0"
+                  className="w-8 h-8 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 mr-2 xs:mr-3 sm:mr-4 flex-shrink-0"
                 />
-                <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-dark">Best Quality Services</h3>
+                <h3 className="text-sm xs:text-base sm:text-lg md:text-xl font-semibold text-dark">Best Quality Services</h3>
               </div>
             </div>
 
@@ -91,13 +60,7 @@ const AboutSection = () => {
           </div>
 
           {/* Images */}
-          <div 
-            className={`grid grid-cols-2 gap-2 sm:gap-4 lg:gap-6 mt-8 lg:mt-0 transition-all duration-700 ease-out delay-200 ${
-              isVisible 
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <div className="grid grid-cols-2 gap-2 sm:gap-4 lg:gap-6 mt-8 lg:mt-0">
             <div className="space-y-2 sm:space-y-4">
               <div className="text-right">
                 <Image
@@ -105,12 +68,8 @@ const AboutSection = () => {
                   alt="About us"
                   width={300}
                   height={400}
-                  className={`w-3/4 ml-auto rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out ${
-                    isVisible 
-                      ? 'opacity-100 scale-100 translate-y-0' 
-                      : 'opacity-0 scale-95 translate-y-4'
-                  }`}
-                  style={{ marginTop: '15%', transitionDelay: '300ms' }}
+                  className="w-3/4 ml-auto rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out"
+                  style={{ marginTop: '15%' }}
                 />
               </div>
               <div className="text-right">
@@ -119,12 +78,7 @@ const AboutSection = () => {
                   alt="About us"
                   width={200}
                   height={200}
-                  className={`w-1/2 sm:w-2/3 lg:w-1/2 ml-auto rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out ${
-                    isVisible 
-                      ? 'opacity-100 scale-100 translate-y-0' 
-                      : 'opacity-0 scale-95 translate-y-4'
-                  }`}
-                  style={{ transitionDelay: '500ms' }}
+                  className="w-1/2 sm:w-2/3 lg:w-1/2 ml-auto rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out"
                 />
               </div>
             </div>
@@ -135,12 +89,7 @@ const AboutSection = () => {
                   alt="About us"
                   width={400}
                   height={300}
-                  className={`w-full rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out ${
-                    isVisible 
-                      ? 'opacity-100 scale-100 translate-y-0' 
-                      : 'opacity-0 scale-95 translate-y-4'
-                  }`}
-                  style={{ transitionDelay: '400ms' }}
+                  className="w-full rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out"
                 />
               </div>
               <div>
@@ -149,12 +98,7 @@ const AboutSection = () => {
                   alt="About us"
                   width={300}
                   height={200}
-                  className={`w-3/4 sm:w-4/5 lg:w-3/4 rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out ${
-                    isVisible 
-                      ? 'opacity-100 scale-100 translate-y-0' 
-                      : 'opacity-0 scale-95 translate-y-4'
-                  }`}
-                  style={{ transitionDelay: '600ms' }}
+                  className="w-3/4 sm:w-4/5 lg:w-3/4 rounded-md sm:rounded-lg shadow-lg hover:scale-105 transition-all duration-500 ease-out"
                 />
               </div>
             </div>

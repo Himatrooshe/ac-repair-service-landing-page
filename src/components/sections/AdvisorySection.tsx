@@ -1,29 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Award, Briefcase, GraduationCap, Globe, Star, Shield, ChevronRight } from 'lucide-react';
 
 const AdvisorySection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const careerHighlights = [
     {
@@ -78,7 +58,6 @@ const AdvisorySection = () => {
 
   return (
     <section 
-      ref={sectionRef}
       className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50 relative overflow-hidden"
     >
       {/* Background Decorative Elements */}
@@ -91,22 +70,20 @@ const AdvisorySection = () => {
       <div className="container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary to-orange-500 rounded-2xl mb-6 shadow-xl">
-              <Award className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-dark mb-4 sm:mb-6">
-              Our Distinguished Advisor
-            </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Backed by decades of engineering excellence and industrial leadership in Bangladesh&apos;s most prestigious organizations
-            </p>
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary to-orange-500 rounded-2xl mb-6 shadow-xl">
+            <Award className="w-8 h-8 text-white" />
           </div>
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-dark mb-4 sm:mb-6">
+            Our Distinguished Advisor
+          </h2>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Backed by decades of engineering excellence and industrial leadership in Bangladesh&apos;s most prestigious organizations
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Advisor Profile */}
-          <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
+          <div>
             <div className="relative group">
               {/* Premium Photo Frame */}
               <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105">
@@ -146,7 +123,7 @@ const AdvisorySection = () => {
           </div>
 
           {/* Content Side */}
-          <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
+          <div>
             <div className="space-y-8">
               {/* Name & Title */}
               <div className="text-center lg:text-left">
@@ -179,8 +156,7 @@ const AdvisorySection = () => {
                   return (
                     <div
                       key={index}
-                      className={`group bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                      style={{ animationDelay: `${0.6 + index * 0.1}s` }}
+                      className="group bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
                     >
                       <div className="flex items-start space-x-3">
                         <div className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
@@ -204,7 +180,7 @@ const AdvisorySection = () => {
         </div>
 
         {/* Career Journey Section */}
-        <div className={`mt-12 sm:mt-16 lg:mt-20 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <div className="mt-12 sm:mt-16 lg:mt-20">
           <div className="text-center mb-8 sm:mb-12">
             <h3 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold text-dark mb-4">
               Distinguished Career Journey
@@ -220,8 +196,7 @@ const AdvisorySection = () => {
               return (
                 <div
                   key={index}
-                  className={`group relative bg-white rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                  style={{ animationDelay: `${0.8 + index * 0.2}s` }}
+                  className="group relative bg-white rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100"
                 >
                   {/* Timeline connector */}
                   {index < careerHighlights.length - 1 && (
@@ -257,7 +232,7 @@ const AdvisorySection = () => {
         </div>
 
         {/* Global Experience Section */}
-        <div className={`mt-12 sm:mt-16 text-center transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <div className="mt-12 sm:mt-16 text-center">
           <div className="bg-gradient-to-r from-primary to-orange-500 text-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl">
             <div className="mb-6">
               <Globe className="w-12 h-12 mx-auto mb-4 animate-pulse" />

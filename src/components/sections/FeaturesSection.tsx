@@ -9,7 +9,7 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="animate-fade-in">
+          <div>
             <h2 className="text-4xl lg:text-5xl font-bold text-shimmer mb-8">
               Why Customers Trust Our Services!
             </h2>
@@ -18,11 +18,10 @@ const FeaturesSection = () => {
             </p>
 
             <div className="space-y-8">
-              {features.map((feature, index) => (
+              {features.map((feature) => (
                 <div
                   key={feature.id}
-                  className="flex items-start animate-fade-in"
-                  style={{ animationDelay: `${index * 0.2}s` }}
+                  className="flex items-start"
                 >
                   <div className="w-20 h-20 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center mr-6 flex-shrink-0 hover-glow floaty">
                     <Image
@@ -43,7 +42,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Image */}
-          <div className="animate-fade-in">
+          <div>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl hover-glow tilt">
               <Image
                 src="https://res.cloudinary.com/dxcjpicou/image/upload/v1760177900/feature_outsir.jpg"

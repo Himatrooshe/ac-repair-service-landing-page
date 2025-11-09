@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, Phone, Mail, Facebook, Youtube, Instagram } from 'lucide-react';
@@ -14,7 +15,14 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  // Scroll progress bar
   useEffect(() => {
     const bar = document.getElementById('scroll-progress');
     let ticking = false;
